@@ -189,7 +189,7 @@ class FreeplayState extends MusicBeatState
 		player = new MusicPlayer(this);
 		add(player);
 		
-		free = new Character(600, -300, 'baloneyFree', true);//adds Baloney to menu (hopefully)
+		free = new Character(0, 0, 'baloneyFree', true);//adds Baloney to menu (hopefully)
 		free.setGraphicSize(Std.int(free.width = 1));
 		add(free);
 
