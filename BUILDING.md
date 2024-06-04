@@ -104,4 +104,8 @@ To fix that, install the `g++` package for your Linux Distro, names for said pac
 
 e.g: Fedora is `gcc-c++`, Gentoo is `sys-devel/gcc`, and so on.
 
+### "I'm missing something called 'torchsfunctions', What should I do?"
+
+just type `haxelib install torchsfunctions`, This will be fixed in the future so you don't have to deal with shit like that.
+
 ---
