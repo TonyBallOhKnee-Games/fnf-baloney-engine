@@ -6,6 +6,7 @@ import backend.Song;
 
 import objects.HealthIcon;
 import objects.MusicPlayer;
+import objects.Character;
 
 import substates.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
@@ -50,6 +51,7 @@ class FreeplayState extends MusicBeatState
 	var bottomBG:FlxSprite;
 
 	var player:MusicPlayer;
+	private var free:Character = null;
 
 	// Torch's Char Menu Vars
 	public var choosingChar:Bool = false;
@@ -187,6 +189,10 @@ class FreeplayState extends MusicBeatState
 		player = new MusicPlayer(this);
 		add(player);
 		
+		free = new Character(600, -300, 'baloneyFree', true);//adds Baloney to menu (hopefully)
+		free.setGraphicSize(Std.int(free.width = 1));
+		add(free);
+
 		changeSelection();
 		enableCharMenu();
 		updateTexts();

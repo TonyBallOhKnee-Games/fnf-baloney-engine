@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BaloneyFree.png">
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="FreeIdle0000" x="10" y="10" width="456" height="607"/>
+	<SubTexture name="FreeIdle0001" x="516" y="10" width="456" height="607"/>
+	<SubTexture name="FreeIdle0002" x="516" y="10" width="456" height="607"/>
+	<SubTexture name="FreeIdle0003" x="1022" y="10" width="456" height="607"/>
+	<SubTexture name="FreeIdle0004" x="1022" y="10" width="456" height="607"/>
+	<SubTexture name="FreeIdle0005" x="1528" y="10" width="456" height="607"/>
+	<SubTexture name="FreeIdle0006" x="1528" y="10" width="456" height="607"/>
+	<SubTexture name="FreeIdle0007" x="10" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0008" x="10" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0009" x="516" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0010" x="516" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0011" x="1022" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0012" x="1022" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0013" x="1528" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0014" x="1528" y="667" width="456" height="607"/>
+	<SubTexture name="FreeIdle0015" x="1528" y="667" width="456" height="607"/>
+</TextureAtlas>
