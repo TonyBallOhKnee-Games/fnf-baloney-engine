@@ -1280,7 +1280,7 @@ class TorchsCharMenuState extends MusicBeatState{
 
     function resetCharSelectVars() {
         // Only uncoment this to force the save variables to be null and potentially fix a save data issue, comment again after use
-        //clearAllSaveData();
+        clearAllSaveData();
         if (FlxG.save.data.maxCharacters == null) FlxG.save.data.maxCharacters = 0;
         if (FlxG.save.data.unlockedCharacters == null) FlxG.save.data.unlockedCharacters = getUnlockedChars();
         if (FlxG.save.data.charactersAvailable == null || characterList == null || characterList == [] || characterLocks == [] || characterLocks == null || characterLocks != FlxG.save.data.charactersAvailable || FlxG.save.data.maxCharacters != characterList.length  || FlxG.save.data.unlockedCharacters != defaultUnlocked) 
