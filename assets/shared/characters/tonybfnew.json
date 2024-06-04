@@ -1,0 +1,256 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				-1
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "TonyMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				1
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "TonyMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				2
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "TonyMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				1
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "TonyMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-9,
+				35
+			],
+			"anim": "hey",
+			"fps": 24,
+			"name": "TonyHey",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				323,
+				1
+			],
+			"anim": "attack",
+			"fps": 24,
+			"name": "TonyAttack",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				70,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "TonyLeft0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				21,
+				-37
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "TonyDown0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-30,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "TonyRight0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				50
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "TonyUp0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				81,
+				-1
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "TonyLeftHigh",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				-40
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "TonyDownHigh",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-44,
+				-2
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "TonyRightHigh",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-2,
+				54
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "TonyUpHigh"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				73,
+				10
+			],
+			"anim": "singLEFT-scared",
+			"fps": 24,
+			"name": "TonyLeftLow",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				21,
+				32
+			],
+			"anim": "singDOWN-scared",
+			"fps": 24,
+			"name": "TonyDownLow",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				81
+			],
+			"anim": "singUP-scared",
+			"fps": 24,
+			"name": "TonyUpLow",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-34,
+				36
+			],
+			"anim": "singRIGHT-scared",
+			"fps": 24,
+			"name": "TonyRightLow",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "TonyIdle0"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "TonyIdleHigh"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle-scared",
+			"loop": false,
+			"name": "TonyIdleLow"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/TonyDovark",
+	"position": [
+		-20,
+		180
+	],
+	"healthicon": "tony-bf-saku",
+	"flip_x": true,
+	"healthbar_colors": [
+		0,
+		153,
+		20
+	],
+	"camera_position": [
+		40,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

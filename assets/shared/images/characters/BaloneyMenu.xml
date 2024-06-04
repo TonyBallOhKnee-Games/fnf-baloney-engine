@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BaloneyMenu.png">
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bal0000" x="10" y="10" width="422" height="678" frameX="0" frameY="-3" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0001" x="10" y="10" width="422" height="678" frameX="0" frameY="-3" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0002" x="482" y="10" width="423" height="682" frameX="-20" frameY="-1" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0003" x="482" y="10" width="423" height="682" frameX="-20" frameY="-1" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0004" x="955" y="10" width="423" height="683" frameX="-34" frameY="0" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0005" x="955" y="10" width="423" height="683" frameX="-34" frameY="0" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0006" x="1428" y="10" width="428" height="683" frameX="-50" frameY="-1" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0007" x="1428" y="10" width="428" height="683" frameX="-50" frameY="-1" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0008" x="10" y="743" width="428" height="682" frameX="-54" frameY="-2" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0009" x="10" y="743" width="428" height="682" frameX="-54" frameY="-2" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0010" x="488" y="743" width="427" height="681" frameX="-55" frameY="-3" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0011" x="488" y="743" width="427" height="681" frameX="-55" frameY="-3" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0012" x="488" y="743" width="427" height="681" frameX="-55" frameY="-3" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0013" x="965" y="743" width="428" height="681" frameX="-52" frameY="-3" frameWidth="482" frameHeight="684"/>
+	<SubTexture name="Bal0014" x="965" y="743" width="428" height="681" frameX="-52" frameY="-3" frameWidth="482" frameHeight="684"/>
+</TextureAtlas>
