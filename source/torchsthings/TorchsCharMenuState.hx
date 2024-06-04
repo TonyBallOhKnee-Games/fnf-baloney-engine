@@ -60,7 +60,7 @@ class TorchsCharMenuState extends MusicBeatState{
     var standardCharacters:Array<Array<String>> = [
         [PlayState.SONG.player1, 'pico-player', 'tankman-player','bf'], // BF characters
         [PlayState.SONG.gfVersion], // GF characters
-        [PlayState.SONG.player2,'sakuromaOG','bf'] // Enemy characters
+        [PlayState.SONG.player2,'sakuromaOld','bf'] // Enemy characters
     ];
 
     // I don't know how to make this bit work just yet
@@ -75,7 +75,7 @@ class TorchsCharMenuState extends MusicBeatState{
     var characterList:Array<String> = [];
     var unlistedCharacters:Array<String> = [ // Put specific mod characters here (that are not in the "characterList.txt" file)
   // You can remove these as they are just here for examples
-        
+        'sakuromaOld'
     ]; 
 
     // This blocks specific characters depending on the song
@@ -102,7 +102,7 @@ class TorchsCharMenuState extends MusicBeatState{
         'bf-christmas', 
         'bf-pixel',
         'tonybfnew',
-        'sakuromaOG',
+        'sakuromaOld',
         'sakuroma',
         'retrowrath',
         'retro2wrath'
