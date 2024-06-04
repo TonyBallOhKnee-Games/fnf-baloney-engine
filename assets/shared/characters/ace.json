@@ -67,6 +67,7 @@
 			"name": "Ace Right Note"
 		}
 	],
+	"vocals_file": "ace",
 	"no_antialiasing": false,
 	"image": "characters/ace",
 	"position": [

@@ -67,6 +67,7 @@
 			"name": "saku right"
 		}
 	],
+	"vocals_file": "saku",
 	"no_antialiasing": false,
 	"image": "characters/sakuroma",
 	"position": [

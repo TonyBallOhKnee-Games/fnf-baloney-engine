@@ -73,6 +73,7 @@
 			"name": "Enough"
 		}
 	],
+	"vocals_file": "retro",
 	"no_antialiasing": false,
 	"image": "characters/WrathRetroSpecterAngy",
 	"position": [
