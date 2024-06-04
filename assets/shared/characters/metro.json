@@ -1,61 +1,62 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "idle",
-			"indices": [],
-			"name": "Minus Retro Idle"
+			"fps": 24,
+			"name": "Minus Retro Idle",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				10,
 				-160
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Minus Retro Down Note"
+			"fps": 24,
+			"name": "Minus Retro Down Note",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				180,
 				17
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Minus Retro Left Note"
+			"fps": 24,
+			"name": "Minus Retro Left Note",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				80,
 				129
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Minus Retro Up Note"
+			"fps": 24,
+			"name": "Minus Retro Up Note",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				46
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Minus Retro Right Note"
+			"fps": 24,
+			"name": "Minus Retro Right Note",
+			"indices": []
 		}
 	],
+	"vocals_file": "metro",
 	"no_antialiasing": false,
 	"image": "characters/minus/minus_retro_assets",
 	"position": [
@@ -75,11 +76,5 @@
 	],
 	"sing_duration": 4,
 	"scale": 1,
-
-	"hasChromatic": false,
-	"wrath": {
-		"night": {
-			"dir": 307
-		}
-	}
+	"_editor_isPlayer": false
 }

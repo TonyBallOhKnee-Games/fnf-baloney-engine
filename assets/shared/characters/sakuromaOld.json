@@ -1,70 +1,70 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "idle",
-			"indices": [],
-			"name": "SakuIdle"
+			"fps": 24,
+			"name": "SakuIdle",
+			"indices": []
 		},
 		{
-			"loop": true,
 			"offsets": [
 				27,
 				-94
 			],
-			"fps": 24,
+			"loop": true,
 			"anim": "laugh",
-			"indices": [],
-			"name": "Saku Giggle"
+			"fps": 24,
+			"name": "Saku Giggle",
+			"indices": []
 		},
 		{
-			"loop": true,
 			"offsets": [
 				0,
 				-150
 			],
-			"fps": 24,
+			"loop": true,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "SakuDown"
+			"fps": 24,
+			"name": "SakuDown",
+			"indices": []
 		},
 		{
-			"loop": true,
 			"offsets": [
 				0,
 				0
 			],
-			"fps": 24,
+			"loop": true,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "SakuLeft"
+			"fps": 24,
+			"name": "SakuLeft",
+			"indices": []
 		},
 		{
-			"loop": true,
 			"offsets": [
 				0,
 				0
 			],
-			"fps": 24,
+			"loop": true,
 			"anim": "singUP",
-			"indices": [],
-			"name": "SakuUp"
+			"fps": 24,
+			"name": "SakuUp",
+			"indices": []
 		},
 		{
-			"loop": true,
 			"offsets": [
 				0,
 				0
 			],
-			"fps": 24,
+			"loop": true,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "SakuRight"
+			"fps": 24,
+			"name": "SakuRight",
+			"indices": []
 		}
 	],
 	"vocals_file": "saku",
@@ -87,13 +87,5 @@
 	],
 	"sing_duration": 4,
 	"scale": 1,
-	"forceDance": true,
-
-	"hasChromatic": false,
-	"wrath": {
-		"wrath": {
-			"dir": 90,
-			"overlay": 0.5
-		}
-	}
+	"_editor_isPlayer": false
 }

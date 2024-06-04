@@ -1,70 +1,70 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				1,
 				82
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Ace Left Note"
+			"fps": 24,
+			"name": "Ace Left Note",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-130,
 				-10
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Ace Down Note"
+			"fps": 24,
+			"name": "Ace Down Note",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-36,
 				94
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Ace Up Note"
+			"fps": 24,
+			"name": "Ace Up Note",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-90,
 				70
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "Ace Idle"
+			"fps": 24,
+			"name": "Ace Idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-50,
 				75
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "hey",
-			"indices": [],
-			"name": "Ace Intro"
+			"fps": 24,
+			"name": "Ace Intro",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-170,
 				77
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Ace Right Note"
+			"fps": 24,
+			"name": "Ace Right Note",
+			"indices": []
 		}
 	],
 	"vocals_file": "ace",
@@ -86,5 +86,6 @@
 		-60
 	],
 	"sing_duration": 6.1,
-	"scale": 1.2
+	"scale": 1.2,
+	"_editor_isPlayer": false
 }

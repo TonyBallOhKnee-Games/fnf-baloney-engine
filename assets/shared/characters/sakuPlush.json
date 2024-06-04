@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				-198,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Saku left"
+			"fps": 24,
+			"name": "Saku left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-412,
 				-94
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Saku Down"
+			"fps": 24,
+			"name": "Saku Down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-561,
 				282
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Saku Up"
+			"fps": 24,
+			"name": "Saku Up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-492,
 				-2
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Saku Right"
+			"fps": 24,
+			"name": "Saku Right",
+			"indices": []
 		},
 		{
+			"loop": true,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": true,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "Saku Idle"
+			"fps": 24,
+			"name": "Saku Idle",
+			"indices": []
 		}
 	],
 	"vocals_file": "sux",
