@@ -49,3 +49,4 @@ tonybfnew:76,134
 sakuroma:-85,-4
 sakuromaOld:-73,-180
 sakuPlush:-245,139
+ace:-59,33

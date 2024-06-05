@@ -58,7 +58,7 @@ class TorchsCharMenuState extends MusicBeatState{
 
     // The Non-Pixel characters, used for the normal stages
     var standardCharacters:Array<Array<String>> = [
-        [PlayState.SONG.player1, 'pico-player', 'tankman-player','bf', 'tonybfnew'], // BF characters
+        [PlayState.SONG.player1, 'bf', 'tonybfnew'], // BF characters
         [PlayState.SONG.gfVersion], // GF characters
         [PlayState.SONG.player2,'sakuromaOld'] // Enemy characters
     ];

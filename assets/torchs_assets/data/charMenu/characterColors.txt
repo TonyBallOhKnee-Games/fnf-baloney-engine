@@ -48,3 +48,4 @@ axylus:#FFC800
 tonybfnew:#00B800
 sakuroma:#FF7699
 sakuromaOld:#FF7699
+ace:#BAE2FF
