@@ -106,6 +106,7 @@ class FreeplayState extends MusicBeatState
 		free = new Character(0, 0, 'baloneyFree', true);//adds Baloney to menu (hopefully)
 		free.setGraphicSize(Std.int(free.width = 1));
 		add(free);
+		free.screenCenter();
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
