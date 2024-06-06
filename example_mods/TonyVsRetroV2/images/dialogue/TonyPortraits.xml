@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="TonyPortraits.png">
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="TonyAkward0000" x="10" y="10" width="377" height="579"/>
+	<SubTexture name="TonyCocky0000" x="437" y="10" width="441" height="579"/>
+	<SubTexture name="TonyExcite0000" x="928" y="10" width="429" height="587"/>
+	<SubTexture name="TonyNorm0000" x="1407" y="10" width="377" height="579"/>
+	<SubTexture name="TonyScared0000" x="10" y="647" width="425" height="579"/>
+	<SubTexture name="TonyWhat0000" x="485" y="647" width="377" height="579"/>
+</TextureAtlas>

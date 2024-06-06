@@ -1,0 +1,89 @@
+{
+	"position": [
+		-30,
+		-60
+	],
+	"dialogue_pos": "right",
+	"scale": 1.25,
+	"image": "TonyPortraits",
+	"animations": [
+		{
+			"loop_name": "TonyNorm",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "TonyNorm",
+			"anim": "normal",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "TonyCocky",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "TonyCocky",
+			"anim": "cocky",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "TonyExcite",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "TonyExcite",
+			"anim": "excited",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "TonyWhat",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "TonyWhat",
+			"anim": "wtf",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "TonyAkward",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "TonyAkward",
+			"anim": "akward",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "TonyScared",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "TonyScared",
+			"anim": "scared",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	]
+}

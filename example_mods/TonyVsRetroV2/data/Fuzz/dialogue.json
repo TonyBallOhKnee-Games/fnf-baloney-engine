@@ -1,0 +1,84 @@
+{
+	"dialogue": [
+		{
+			"expression": "blush",
+			"text": "Peek-a-boo!",
+			"boxState": "normal",
+			"sound": "sakuromaText",
+			"speed": 0.05,
+			"portrait": "saku"
+		},
+		{
+			"expression": "cocky",
+			"text": "Hey! I thought I was gonna get a challenge!",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony"
+		},
+		{
+			"expression": "menace",
+			"text": "Oh, I can be a challange.",
+			"boxState": "normal",
+			"sound": "sakuromaText",
+			"speed": 0.05,
+			"portrait": "saku"
+		},
+		{
+			"expression": "cocky",
+			"text": "Show it, woman!",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony"
+		},
+		{
+			"expression": "horn",
+			"text": "Ay--yo!",
+			"boxState": "normal",
+			"sound": "sakuromaText",
+			"speed": 0.05,
+			"portrait": "saku"
+		},
+		{
+			"expression": "scared",
+			"text": "Um.... I'm referring to singing...",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony"
+		},
+		{
+			"expression": "think",
+			"text": "Oops...",
+			"boxState": "normal",
+			"sound": "sakuromaText",
+			"speed": 0.05,
+			"portrait": "saku"
+		},
+		{
+			"expression": "blush",
+			"text": "Must've gotten a bit \"encouraged\"",
+			"boxState": "normal",
+			"sound": "sakuromaText",
+			"speed": 0.05,
+			"portrait": "saku"
+		},
+		{
+			"expression": "wtf",
+			"text": "Bruh...",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "akward",
+			"text": "Um.... 3, 2, 1, GO?"
+		}
+	]
+}

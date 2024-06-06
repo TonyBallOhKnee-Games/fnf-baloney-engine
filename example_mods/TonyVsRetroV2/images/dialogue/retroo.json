@@ -1,0 +1,141 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		110,
+		50
+	],
+	"scale": 1.25,
+	"animations": [
+		{
+			"anim": "talk",
+			"loop_offsets": [
+				0,
+				0
+			],
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "Neutral0000",
+			"idle_name": "Neutral0000"
+		},
+		{
+			"loop_name": "Point0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Point0000",
+			"anim": "point",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Smug0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Smug0000",
+			"anim": "smug",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Angry0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Angry0000",
+			"anim": "angry",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Blush0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Blush0000",
+			"anim": "blush",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Confused0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Confused0000",
+			"anim": "confused",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Question0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Question0000",
+			"anim": "quesiton",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Assertive0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Assertive0000",
+			"anim": "Assertive",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Eyeroll0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Eyeroll0000",
+			"anim": "eyeroll",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "Annoyed0000",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "Annoyed0000",
+			"anim": "annoyed",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "RetroSpecter"
+}

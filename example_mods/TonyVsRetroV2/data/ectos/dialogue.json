@@ -1,0 +1,92 @@
+{
+	"dialogue": [
+		{
+			"sound": "TonyTalks",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "Wow! That was epic! Thanks for the song"
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "point",
+			"text": "Same here."
+		},
+		{
+			"sound": "sakuromaText",
+			"speed": 0.05,
+			"portrait": "saku",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "Hello---!"
+		},
+		{
+			"sound": "tonytalks",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "Ah! A woman!"
+		},
+		{
+			"sound": "sakuromaText",
+			"speed": 0.05,
+			"portrait": "saku",
+			"boxState": "normal",
+			"expression": "angee",
+			"text": "What's up with him?"
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "eyeroll",
+			"text": "Damn. He's one of THOSE people."
+		},
+		{
+			"sound": "tonytalks",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "wtf",
+			"text": "Hey! I can take this!"
+		},
+		{
+			"sound": "tonytalks",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "Uh..... Hi, ...."
+		},
+		{
+			"sound": "sakuromatext",
+			"speed": 0.05,
+			"portrait": "saku",
+			"boxState": "normal",
+			"expression": "flirty",
+			"text": "Hi~!"
+		},
+		{
+			"sound": "tonytalks",
+			"speed": 0.215,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "wtf",
+			"text": "Bruh."
+		},
+		{
+			"sound": "retroAngryVoice",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "Alright, no more waiting, going Zerk!"
+		}
+	]
+}

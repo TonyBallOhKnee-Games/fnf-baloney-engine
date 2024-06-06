@@ -1,0 +1,108 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "scared",
+			"text": "AAAAAAAAAH!!!!"
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "What the--?"
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "annoyed",
+			"text": "Hey! You runined my cool opening!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "akward",
+			"text": "Hey, do you know where I am?"
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "quesiton",
+			"text": "Uh......."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "wtf",
+			"text": "Let me guess... the dialouge writer assumed this was hell."
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "eyeroll",
+			"text": "Yeah...."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "akward",
+			"text": "Other than that..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Can you figure out a way outta here?"
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "point",
+			"text": "You gotta sing your way out."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "tony",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "I guess I was lucky enough to have brought this microphone with me!"
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "smug",
+			"text": "Wow... how convinient."
+		},
+		{
+			"sound": "retroText",
+			"speed": 0.05,
+			"portrait": "retroo",
+			"boxState": "normal",
+			"expression": "eyeroll",
+			"text": "Almost as if it were have planned..."
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"name": "Tony Dovark VS RetroSpecter V1.1",
+	"description": "Tony somehow ends up in the RetroSpecter mod. This update includes stuff like the minus week, menu sounds, and colored arrows. (Simple note: restart song once dialouge ends!!!)",
+	"restart":true,
+	"runsGlobally": true,
+	"color": [170, 0, 255],
+	"discordRPC": "863222024192262205"
+}

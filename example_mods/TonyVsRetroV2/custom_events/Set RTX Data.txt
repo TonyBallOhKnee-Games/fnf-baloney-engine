@@ -1,0 +1,7 @@
+Value 1: The data string copied from the editor,
+Use CTRL+V to paste it in!
+
+The first event in the song will be set as the default!
+
+If using in a stage script make sure to call it
+in onCreatePost()

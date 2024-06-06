@@ -1,0 +1,128 @@
+{
+	"position": [
+		-20,
+		0
+	],
+	"dialogue_pos": "left",
+	"scale": 1.25,
+	"image": "Sakuroma",
+	"animations": [
+		{
+			"idle_offsets": [
+				-80,
+				0
+			],
+			"loop_offsets": [
+				-80,
+				0
+			],
+			"anim": "talk",
+			"idle_name": "Neutral0000",
+			"loop_name": "Neutral0000"
+		},
+		{
+			"loop_offsets": [
+				-110,
+				0
+			],
+			"anim": "Happy",
+			"idle_offsets": [
+				-110,
+				0
+			],
+			"loop_name": "Happy0000",
+			"idle_name": "Happy0000"
+		},
+		{
+			"loop_offsets": [
+				-110,
+				0
+			],
+			"anim": "angee",
+			"idle_offsets": [
+				-110,
+				0
+			],
+			"loop_name": "Angry0000",
+			"idle_name": "Angry0000"
+		},
+		{
+			"loop_offsets": [
+				-100,
+				0
+			],
+			"anim": "blush",
+			"idle_offsets": [
+				-100,
+				0
+			],
+			"loop_name": "Blush0000",
+			"idle_name": "Blush0000"
+		},
+		{
+			"loop_offsets": [
+				-100,
+				0
+			],
+			"anim": "think",
+			"idle_offsets": [
+				-100,
+				0
+			],
+			"loop_name": "Thinking0000",
+			"idle_name": "Thinking0000"
+		},
+		{
+			"loop_offsets": [
+				-100,
+				0
+			],
+			"anim": "horn",
+			"idle_offsets": [
+				-100,
+				0
+			],
+			"loop_name": "Horny0000",
+			"idle_name": "Horny0000"
+		},
+		{
+			"loop_offsets": [
+				-100,
+				0
+			],
+			"anim": "flirty",
+			"idle_offsets": [
+				-100,
+				0
+			],
+			"loop_name": "Flirt0000",
+			"idle_name": "Flirt0000"
+		},
+		{
+			"loop_offsets": [
+				-100,
+				0
+			],
+			"anim": "menace",
+			"idle_offsets": [
+				-100,
+				0
+			],
+			"loop_name": "Menacing0000",
+			"idle_name": "Menacing0000"
+		},
+		{
+			"loop_offsets": [
+				-100,
+				0
+			],
+			"anim": "enraged",
+			"idle_offsets": [
+				-100,
+				0
+			],
+			"loop_name": "Enraged0000",
+			"idle_name": "Enraged0000"
+		}
+	]
+}
