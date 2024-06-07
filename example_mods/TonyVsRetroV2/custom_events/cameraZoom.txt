@@ -1,9 +1,0 @@
-camera do a zoom in and out.
-check stage json for what ur default zoom is.
-
-VAL1 is the number that will be zoomed to
-if VAL2 is set to "true", the camera will snap to
-the desired number without having to wait for it to
-zoom in naturally.
-
-by FP, use w/o creds idrc its like 3 lines anyway.

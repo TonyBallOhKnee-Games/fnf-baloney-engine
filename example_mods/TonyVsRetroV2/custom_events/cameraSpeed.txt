@@ -1,6 +1,0 @@
-How fast the camera moves to each player singing.
-
-Default VAL1 is "1".
-Leave VAL1 blank to use default.
-
-by FP, use w/o creds idrc its like 3 lines anyway.
