@@ -556,7 +556,7 @@ class TitleState extends MusicBeatState
 				case 4:
 					#if PSYCH_WATERMARKS
 					addMoreText('TonyBallOhKnee', 40);
-					addMoreText('And the Psych Engine Peeps', 40);
+					addMoreText('and Torch Xentret', 40);
 					#else
 					addMoreText('present');
 					#end
@@ -581,7 +581,7 @@ class TitleState extends MusicBeatState
 				case 13:
 					deleteCoolText();
 				case 14:
-					addMoreText('FNF');
+					addMoreText('Friday Night Funkin');
 				case 15:
 					addMoreText('Baloney');
 				case 16:

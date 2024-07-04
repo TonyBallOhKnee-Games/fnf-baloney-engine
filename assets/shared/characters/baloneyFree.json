@@ -8,7 +8,7 @@
 			"indices": [],
 			"fps": 24,
 			"anim": "idle",
-			"loop": false,
+			"loop": true,
 			"name": "FreeIdle"
 		}
 	],

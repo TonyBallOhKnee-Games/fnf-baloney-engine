@@ -57,6 +57,7 @@ class FreeplayState extends MusicBeatState
 	public var choosingChar:Bool = false;
 	var charText:FlxText;
 	var yesno:FlxText;
+	private var char1:Character = null;
 
 	override function create()
 	{
@@ -102,12 +103,11 @@ class FreeplayState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
 		bg.screenCenter();
+		char1 = new Character(710, 170, 'baloneyFree', false);//retrowrath
+		char1.setGraphicSize(Std.int(char1.width = 0.8));
+		add(char1);
 
-		free = new Character(0, 0, 'baloneyFree', true);//adds Baloney to menu (hopefully)
-		free.setGraphicSize(Std.int(free.width = 1));
-		add(free);
-		free.screenCenter();
-
+		
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 

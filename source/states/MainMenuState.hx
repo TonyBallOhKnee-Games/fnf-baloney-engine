@@ -1,4 +1,4 @@
-package states;
+	package states;
 
 import flixel.FlxObject;
 import flixel.addons.transition.FlxTransitionableState;
@@ -22,7 +22,8 @@ class MainMenuState extends MusicBeatState
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		#if !switch 'donate', #end
-		'options'
+		'options',
+		'gallery'
 	];
 
 	var magenta:FlxSprite;
@@ -144,6 +145,9 @@ class MainMenuState extends MusicBeatState
 		fnfVer.scrollFactor.set();
 		fnfVer.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(fnfVer);
+		
+
+
 		changeItem();
 
 		#if ACHIEVEMENTS_ALLOWED
@@ -155,7 +159,7 @@ class MainMenuState extends MusicBeatState
 		#if MODS_ALLOWED
 		Achievements.reloadList();
 		#end
-		#end
+		#end	
 
 		super.create();
 
@@ -234,6 +238,8 @@ class MainMenuState extends MusicBeatState
 									PlayState.SONG.splashSkin = null;
 									PlayState.stageUI = 'normal';
 								}
+							case 'gallery':
+								MusicBeatState.switchState(new GalleryState());
 						}
 					});
 
