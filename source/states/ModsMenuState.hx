@@ -64,7 +64,7 @@ class ModsMenuState extends MusicBeatState
 
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("Modifiying...", null);
 		#end
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
@@ -807,8 +807,8 @@ class ModItem extends FlxSpriteGroup
 	public var totalFrames:Int = 0;
 
 	// options
-	public var name:String = 'Unknown Mod';
-	public var desc:String = 'No description provided.';
+	public var name:String = 'Basic Mod Name';
+	public var desc:String = 'I O U Mod description';
 	public var iconFps:Int = 10;
 	public var bgColor:FlxColor = 0xFF665AFF;
 	public var pack:Dynamic = null;
