@@ -17,11 +17,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import openfl.utils.Assets;
-import openfl.net.FileReference;
-#if debug
-import flixel.ui.FlxButton;
-import flixel.addons.ui.*;
-#end
 
 // To add these libraries below, just do "haxelib install torchsfunctions"
 import torchsfunctions.ArrayTools;
@@ -29,6 +24,7 @@ import torchsfunctions.KeyboardFunctions;
 import torchsfunctions.MathFunctions;
 
 import states.*;
+//import states.FreeplayState;
 import Math;
 using StringTools;
 
@@ -78,16 +74,14 @@ class TorchsCharMenuState extends MusicBeatState{
     // Do not remove these variables, used to grab ALL characters in the build
     var characterList:Array<String> = [];
     var unlistedCharacters:Array<String> = [ // Put specific mod characters here (that are not in the "characterList.txt" file)
+  // You can remove these as they are just here for examples
         'sakuromaOld'
-    ]; // PLEASE KEEP TRACK IF YOU ADD NEW CHARACTERS, IT GETS ANNOYING WHEN SOMETHING CRASHES HERE BECAUSE A CHARACTER WASN'T ADDED TO THIS LIST HERE
+    ]; 
 
     // This blocks specific characters depending on the song
     // Order is ['Song Name', ["Each", "Character"]]
     var blockedCharactersPerSong:Array<Array<Dynamic>> = [
-        ['darnell', ['bf-z3mp', 'noah','Compota-Hyper']], 
-        ['score', ['bf-z3mp', 'noah','Compota-Hyper']], 
-        ['lit up', ['bf-z3mp', 'noah','Compota-Hyper']], 
-        ['2hot', ['bf-z3mp', 'noah','Compota-Hyper']]
+        //['dad-battle', ['tankman', 'tankman-player']]
     ];
 
     #if ACHIEVEMENTS_ALLOWED
@@ -97,11 +91,7 @@ class TorchsCharMenuState extends MusicBeatState{
     Slot 3: Description to unlock character
     */
     var charsToUnlock:Array<Array<String>> = [
-        ['pico-player', 'week1_nomiss', "Unlock this character\nby beating Week 1\nwith no misses."],
-        ['bf-z3mp', 'week1_nomiss', "Unlock this character\nby beating Week 1\nwith no misses."],
-        ['noah', 'week1_nomiss', "Unlock this character\nby beating Week 1\nwith no misses."],
-        ['jeys-bf', 'week1_nomiss', "Unlock this character\nby beating Week 1\nwith no misses."],
-        ['bf-iandee', 'week1_nomiss', "Unlock this character\nby beating Week 1\nwith no misses."]
+        ['pico-player', 'week1_nomiss', "Unlock this character\nby beating Week 1\nwith no misses."]
     ];
     #end
 
@@ -110,18 +100,12 @@ class TorchsCharMenuState extends MusicBeatState{
         'bf', 
         'bf-car', 
         'bf-christmas', 
-        'bf-pixel', 
-        'bf-z3mp', 
-        'noah', 
-        'Compota-Hyper',
-        'jeys-bf', 
-        'bf-iandee',
-        'gf-z3mp',
-        'gf-soleil', 
-        'gf-carZ3mp', 
-        'pico-playerZ3mp', 
-        'picoZ3mp', 
-        'bidu-gold'
+        'bf-pixel',
+        'tonybfnew',
+        'sakuromaOld',
+        'sakuroma',
+        'retrowrath',
+        'retro2wrath'
     ];
 
     // Character Scaling [Default, Pixel]
@@ -196,22 +180,8 @@ class TorchsCharMenuState extends MusicBeatState{
     #if debug
     var inCharMenuDebug:Bool = false;
     var offsets:FlxText;
-    var testOffsets:Array<Int> = [0, 0];
+    var testOffsets:Array<Int> = [0,0];
     var curChar:FlxText;
-    var saveButton:FlxButton;
-    var bgColorText:FlxText;
-    var backgroundColor:Array<Int> = [0, 0, 0];
-    var bgColorR:FlxUINumericStepper;
-    var bgColorG:FlxUINumericStepper;
-    var bgColorB:FlxUINumericStepper;
-    var testColors:FlxButton;
-
-    var charInfoSaveData:CharInfoData = {
-        name: '',
-        description: '',
-        offsets: [0, 0],
-        color: [0, 0, 0]
-    };
     #end
 
     // The new function is only here to edit the choices in the menu
@@ -228,24 +198,6 @@ class TorchsCharMenuState extends MusicBeatState{
             } else {charactersToChooseFrom.slice(i, 1);}
         }
         this.charactersToChooseFrom = charactersToChooseFrom;
-    }
-
-    function charsToChoose():Int {
-        if (charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // All Characters
-            return 1;
-        } else if (charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && !charactersToChooseFrom.contains('enemy')) { // No Enemy
-            return 2;
-        } else if (!charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // No BF
-            return 3;
-        } else if (charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // No GF
-            return 4;
-        } else if (charactersToChooseFrom.contains('bf') && !charactersToChooseFrom.contains('gf') && !charactersToChooseFrom.contains('enemy')) { // Only BF
-            return 5;
-        } else if (!charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && !charactersToChooseFrom.contains('enemy')) { // Only GF
-            return 6;
-        } else if (!charactersToChooseFrom.contains('bf') && !charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // Only Enemy
-            return 7;
-        } else return 0;
     }
 
     override function create() {
@@ -302,27 +254,28 @@ class TorchsCharMenuState extends MusicBeatState{
         add(selector); 
 
         // All isn't needed as I can do that above
-        if (charsToChoose() == 1) { // All Characters
+        if (charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // All Characters
             leftThirdBG.color = grabColor(enemyImageArray[selectedEnemy]);
             middleThirdBG.color = grabColor(gfImageArray[selectedGF]);
             rightThirdBG.color = grabColor(bfImageArray[selectedBF]);
-        } else if (charsToChoose() == 2) { // No Enemy
+        } else if (charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && !charactersToChooseFrom.contains('enemy')) { // No Enemy
             leftHalfBG.color = grabColor(gfImageArray[selectedGF]);
             rightHalfBG.color = grabColor(bfImageArray[selectedBF]);
-        } else if (charsToChoose() == 3) { // No BF
+        } else if (!charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // No BF
             leftHalfBG.color = grabColor(enemyImageArray[selectedEnemy]);
             rightHalfBG.color = grabColor(gfImageArray[selectedGF]);
-        } else if (charsToChoose() == 4) { // No GF
+        } else if (charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // No GF
             leftHalfBG.color = grabColor(enemyImageArray[selectedEnemy]);
             rightHalfBG.color = grabColor(bfImageArray[selectedBF]);
-        } else if (charsToChoose() == 5) { // Only BF
+        } else if (charactersToChooseFrom.contains('bf') && !charactersToChooseFrom.contains('gf') && !charactersToChooseFrom.contains('enemy')) { // Only BF
             fullBG.color = grabColor(bfImageArray[selectedBF]);
-        } else if (charsToChoose() == 6) { // Only GF
+        } else if (!charactersToChooseFrom.contains('bf') && charactersToChooseFrom.contains('gf') && !charactersToChooseFrom.contains('enemy')) { // Only GF
             fullBG.color = grabColor(gfImageArray[selectedGF]);
-        } else if (charsToChoose() == 7) { // Only Enemy
+        } else if (!charactersToChooseFrom.contains('bf') && !charactersToChooseFrom.contains('gf') && charactersToChooseFrom.contains('enemy')) { // Only Enemy
             fullBG.color = grabColor(enemyImageArray[selectedEnemy]);
         }
-
+        
+        // For offest creation
         #if debug
         offsets = new FlxText(FlxG.width * 0.7, FlxG.height * 0.8, 0, "", 32);
         offsets.setFormat('assets/fonts/vcr.ttf', 32, FlxColor.WHITE, RIGHT);
@@ -331,65 +284,14 @@ class TorchsCharMenuState extends MusicBeatState{
         curChar = new FlxText(FlxG.width * 0.1, FlxG.height * 0.9, 0, "", 32);
         curChar.setFormat('assets/fonts/vcr.ttf', 32, FlxColor.WHITE, RIGHT);
         add(curChar);
-
-        saveButton = new FlxButton(FlxG.width * 0.7, FlxG.height * 0.95, "Save Info", function() {
-            saveCharInfo();
-        });
-        add(saveButton);
-
-        backgroundColor = charInfoSaveData.color;
-
-        bgColorR = new FlxUINumericStepper(saveButton.x, saveButton.y - 40, 20, backgroundColor[0], 0, 255, 0);
-        bgColorG = new FlxUINumericStepper(bgColorR.x + 65, bgColorR.y, 20, backgroundColor[1], 0, 255, 0);
-        bgColorB = new FlxUINumericStepper(bgColorG.x + 65, bgColorG.y, 20, backgroundColor[2], 0, 255, 0);
-        add(bgColorR);
-        add(bgColorG);
-        add(bgColorB);
-        bgColorText = new FlxText(bgColorR.x, bgColorR.y - 18, 0, "Background R/G/B:");
-        add(bgColorText);
-
-        testColors = new FlxButton(saveButton.x, saveButton.y - 20, "Test BG Colors", function() {
-            backgroundColor = [Math.round(bgColorR.value), Math.round(bgColorG.value), Math.round(bgColorB.value)];
-            switch (selectedColumn) {
-                case 'enemy':
-                    if (charsToChoose() == 1) {
-                        leftThirdBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else if (charsToChoose() == (3 | 4)) {
-                        leftHalfBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else if (charsToChoose() == 7) {
-                        fullBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else trace('This shit aint possible');
-                case 'gf':
-                    if (charsToChoose() == 1) {
-                        middleThirdBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else if (charsToChoose() == 2) {
-                        leftHalfBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else if (charsToChoose() == 3) {
-                        rightHalfBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else if (charsToChoose() == 6) {
-                        fullBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else trace('This shit aint possible');
-                case 'bf':
-                    if (charsToChoose() == 1) {
-                        rightThirdBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else if (charsToChoose() == (2 | 4)) {
-                        rightHalfBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else if (charsToChoose() == 5) {
-                        fullBG.color = FlxColor.fromRGB(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
-                    } else trace('This shit aint possible');
-                default: 
-                    trace('bruh, how there no column');
-            }
-        });
-        add(testColors);
         #end
 
         // Character select text at the top of the screen
-        var selectionHeader:Alphabet = new Alphabet(0, 50, 'Character Select', true);
+        var selectionHeader:Alphabet = new Alphabet(0, 50, 'Pick Your Rapper!', true);
         selectionHeader.screenCenter(X);
         add(selectionHeader);
 
-        //cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]]; // Use normally for other engines, or prior to Psych 0.7.3
+        //cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
         camera = initPsychCamera(); // Apparently this fixed the Black Screen issue in Psych 0.7.3 - Torch
         super.create();
     }
@@ -581,18 +483,30 @@ class TorchsCharMenuState extends MusicBeatState{
             if (blockedSongs[song] == PlayState.SONG.song.toLowerCase()) {
                 for (char in blockedChars[song]) {
                     if (pixelSong) {
-                        for (list in pixelCharacters) {
-                            for (i in 0...list.length) {
-                                if ( i==0 ) continue;
-                                else {if (list[i] == char) list.splice(i, 1);}
-                            }
+                        for (i in 0...pixelCharacters[0].length) {
+                            if (i == 0) {continue;}
+                            else {if (pixelCharacters[0][i] == char) {pixelCharacters[0].splice(i, 1);}}
+                        }
+                        for (i in 0...pixelCharacters[1].length) {
+                            if (i == 0) {continue;}
+                            else {if (pixelCharacters[1][i] == char) {pixelCharacters[1].splice(i, 1);}}
+                        }
+                        for (i in 0...pixelCharacters[2].length) {
+                            if (i == 0) {continue;}
+                            else {if (pixelCharacters[2][i] == char) {pixelCharacters[2].splice(i, 1);}}
                         }
                     } else {
-                        for (list in standardCharacters) {
-                            for (i in 0...list.length) {
-                                if (i == 0) {continue;}
-                                else {if (list[i] == char) list.splice(i, 1);}
-                            }
+                        for (i in 0...standardCharacters[0].length) {
+                            if (i == 0) {continue;}
+                            else {if (standardCharacters[0][i] == char) {standardCharacters[0].splice(i, 1);}}
+                        }
+                        for (i in 0...standardCharacters[1].length) {
+                            if (i == 0) {continue;}
+                            else {if (standardCharacters[1][i] == char) {standardCharacters[1].splice(i, 1);}}
+                        }
+                        for (i in 0...standardCharacters[2].length) {
+                            if (i == 0) {continue;}
+                            else {if (standardCharacters[2][i] == char) {standardCharacters[2].splice(i, 1);}}
                         }
                     }
                 }
@@ -606,11 +520,9 @@ class TorchsCharMenuState extends MusicBeatState{
             var removeChars:Array<String> = [];
             for (i in 0...charArray.length)
             {
-                var locked:Bool = false; 
-                if (charArray[i] != charArray[0]) {
-                    if (characterLocks[ArrayTools.grabFirstVal(characterLocks).indexOf(charArray[i])][1].toLowerCase() == "false") {
-                        locked = true;
-                    }
+                var locked:Bool = false;
+                if (characterLocks[ArrayTools.grabFirstVal(characterLocks).indexOf(charArray[i])][1].toLowerCase() == "false" && charArray[i] != charArray[0]) {
+                    locked = true;
                 }
                 if (ClientPrefs.data.loadLockedChars == false && locked) {
                     removeChars.push(charArray[i]);
@@ -653,10 +565,8 @@ class TorchsCharMenuState extends MusicBeatState{
             for (i in 0...charArray.length)
             {
                 var locked:Bool = false;
-                if (charArray[i] != charArray[0]) {
-                    if (characterLocks[ArrayTools.grabFirstVal(characterLocks).indexOf(charArray[i])][1].toLowerCase() == "false") {
-                        locked = true;
-                    }
+                if (characterLocks[ArrayTools.grabFirstVal(characterLocks).indexOf(charArray[i])][1].toLowerCase() == "false" && charArray[i] != charArray[0]) {
+                    locked = true;
                 }
                 if (ClientPrefs.data.loadLockedChars == false && locked) {
                     removeChars.push(charArray[i]);
@@ -693,10 +603,8 @@ class TorchsCharMenuState extends MusicBeatState{
             for (i in 0...charArray.length)
             {
                 var locked:Bool = false;
-                if (charArray[i] != charArray[0]) {
-                    if (characterLocks[ArrayTools.grabFirstVal(characterLocks).indexOf(charArray[i])][1].toLowerCase() == "false") {
-                        locked = true;
-                    }
+                if (characterLocks[ArrayTools.grabFirstVal(characterLocks).indexOf(charArray[i])][1].toLowerCase() == "false" && charArray[i] != charArray[0]) {
+                    locked = true;
                 }
                 if (ClientPrefs.data.loadLockedChars == false && locked) {
                     removeChars.push(charArray[i]);
@@ -755,65 +663,6 @@ class TorchsCharMenuState extends MusicBeatState{
         return true;
     }
 
-    var file:FileReference;
-
-    function getCharName(column:String) {
-        switch (column) {
-            case 'enemy':
-                return standardCharacters[2][selectedEnemy];
-            case 'gf':
-                return standardCharacters[1][selectedGF];
-            case 'bf':
-                return standardCharacters[0][selectedBF];
-            default:
-                return standardCharacters[0][0];
-        }
-    }
-
-    #if debug
-    // This will be changed later - Torch
-    function saveCharInfo() {
-        var saveName = getCharName(selectedColumn);
-        charInfoSaveData.name = saveName;
-        charInfoSaveData.color = backgroundColor;
-        var data:String = haxe.Json.stringify(charInfoSaveData, "\t");
-
-        /*
-        var json:Dynamic = {
-            "name": 'BOYFRIEND.XML',
-            "description": '',
-            "offsets": [-18, 283],
-            "color": 0xFF00ABC5
-        }
-        var test:String = haxe.Json.stringify(json, "\t");
-        trace(test);
-        */
-
-        if (data.length > 0) {
-            file = new FileReference();
-            file.save(data, '$saveName.json');
-        }
-    }
-
-    function changeAlpha(array:Array<Dynamic>, alpha:Int = 1) {
-        for (item in array) {
-            item.alpha = alpha;
-        }
-    }
-
-    function changeActive(array:Array<Dynamic>, active:Bool = true) {
-        for (item in array) {
-            item.active = active;
-        }
-    }
-    #end
-
-    var disableUIKeys:Bool = false;
-
-    #if debug
-    var tempOffsets:Array<Int>;
-    #end
-
     override function update(elapsed:Float) {
         // Must be changed depending on how an engine uses its own controls
         var leftPress = controls.UI_LEFT_P; // Psych
@@ -823,7 +672,7 @@ class TorchsCharMenuState extends MusicBeatState{
         var accepted = controls.ACCEPT; // Should be Universal
         var goBack = controls.BACK; // Should be Universal
 
-        #if debug
+
         var debugMode = FlxG.keys.justPressed.E;
         var moveDown = FlxG.keys.pressed.K;
         var moveUp = FlxG.keys.pressed.I;
@@ -831,7 +680,7 @@ class TorchsCharMenuState extends MusicBeatState{
         var moveRight = FlxG.keys.pressed.L;
         var speedUp = FlxG.keys.pressed.SHIFT;
         var refreshButton = FlxG.keys.justPressed.CAPSLOCK;
-        #end
+
         
         charInput += KeyboardFunctions.keypressToString();
 
@@ -854,141 +703,61 @@ class TorchsCharMenuState extends MusicBeatState{
         }
 
         if (!alreadySelected) {
-            //if (FlxG.keys.pressed.V) {testSave();}
-            if (!disableUIKeys) {
-                if (leftPress) {changeSelection(setColumn(-1));}
-                if (rightPress) {changeSelection(setColumn(1));}
-                if (upPress) {changeSelection(selectedColumn, -1);}
-                if (downPress) {changeSelection(selectedColumn, 1);}
-                if (accepted) {
-                    if (checkIfAbleToContinue()) {
-                        alreadySelected = true;
-                        FlxG.save.data.charactersAvailable = characterLocks;
-                        FlxG.save.flush();
+            if (leftPress) {changeSelection(setColumn(-1));}
+            if (rightPress) {changeSelection(setColumn(1));}
+            if (upPress) {changeSelection(selectedColumn, -1);}
+            if (downPress) {changeSelection(selectedColumn, 1);}
+            if (accepted) {
+                if (checkIfAbleToContinue()) {
+                    alreadySelected = true;
+                    FlxG.save.data.charactersAvailable = characterLocks;
+                    FlxG.save.flush();
+
+                    // This is just to ensure that the PlayState loads from the correct library.
+                    var quickVar = Paths.formatToSongPath(PlayState.SONG.song.toLowerCase());
+                    var songJson = Highscore.formatSong(quickVar, PlayState.storyDifficulty);
+                    PlayState.SONG = Song.loadFromJson(songJson, quickVar);
+                    PlayState.isStoryMode = !fromFreeplay;
+                    PlayState.storyDifficulty = playstateDiff;
+
+                    var theSelected:Array<String> = [
+                        (pixelSong ? pixelCharacters[2] : standardCharacters[2])[selectedEnemy], 
+                        (pixelSong ? pixelCharacters[1] : standardCharacters[1])[selectedGF], 
+                        (pixelSong ? pixelCharacters[0] : standardCharacters[0])[selectedBF]
+                    ];
+                    if (theSelected[1] != PlayState.SONG.gfVersion)
+                        PlayState.SONG.gfVersion = theSelected[1];
+                    if ((PlayState.SONG.player2.startsWith('gf') || PlayState.SONG.player2 == PlayState.SONG.gfVersion) && theSelected[1] != PlayState.SONG.player2)
+                        PlayState.SONG.player2 = theSelected[1];
+                    else if (theSelected[0] != PlayState.SONG.player2)
+                        PlayState.SONG.player2 = theSelected[0];
+                    if (theSelected[2] != PlayState.SONG.player1)
+                        PlayState.SONG.player1 = theSelected[2];
     
-                        // This is just to ensure that the PlayState loads from the correct library.
-                        var quickVar = Paths.formatToSongPath(PlayState.SONG.song.toLowerCase());
-                        var songJson = Highscore.formatSong(quickVar, PlayState.storyDifficulty);
-                        PlayState.SONG = Song.loadFromJson(songJson, quickVar);
-                        PlayState.isStoryMode = !fromFreeplay;
-                        PlayState.storyDifficulty = playstateDiff;
+                    if (charactersToChooseFrom.contains('enemy')) {FlxFlicker.flicker(enemyImageArray[selectedEnemy], 0);}
+                    if (charactersToChooseFrom.contains('gf')) {FlxFlicker.flicker(gfImageArray[selectedGF], 0);}
+                    if (charactersToChooseFrom.contains('bf')) {FlxFlicker.flicker(bfImageArray[selectedBF], 0);}
     
-                        var theSelected:Array<String> = [
-                            (pixelSong ? pixelCharacters[2] : standardCharacters[2])[selectedEnemy], 
-                            (pixelSong ? pixelCharacters[1] : standardCharacters[1])[selectedGF], 
-                            (pixelSong ? pixelCharacters[0] : standardCharacters[0])[selectedBF]
-                        ];
-                        if (theSelected[1] != PlayState.SONG.gfVersion)
-                            PlayState.SONG.gfVersion = theSelected[1];
-                        if ((PlayState.SONG.player2.startsWith('gf') || PlayState.SONG.player2 == PlayState.SONG.gfVersion) && theSelected[1] != PlayState.SONG.player2)
-                            PlayState.SONG.player2 = theSelected[1];
-                        else if (theSelected[0] != PlayState.SONG.player2)
-                            PlayState.SONG.player2 = theSelected[0];
-                        if (theSelected[2] != PlayState.SONG.player1)
-                            PlayState.SONG.player1 = theSelected[2];
-        
-                        if (charactersToChooseFrom.contains('enemy')) {FlxFlicker.flicker(enemyImageArray[selectedEnemy], 0);}
-                        if (charactersToChooseFrom.contains('gf')) {FlxFlicker.flicker(gfImageArray[selectedGF], 0);}
-                        if (charactersToChooseFrom.contains('bf')) {FlxFlicker.flicker(bfImageArray[selectedBF], 0);}
-        
-                        FlxG.sound.music.volume = 0;
-                        FreeplayState.destroyFreeplayVocals();
-                        
-                        new FlxTimer().start(0.75, function(tmr:FlxTimer) {LoadingState.loadAndSwitchState(new PlayState());});
-                    }
+                    FlxG.sound.music.volume = 0;
+                    FreeplayState.destroyFreeplayVocals();
+                    
+                    new FlxTimer().start(0.75, function(tmr:FlxTimer) {LoadingState.loadAndSwitchState(new PlayState());});
                 }
-                if (goBack) {
-                    FlxG.sound.play(Paths.sound('cancelMenu'));
-                    if (PlayState.isStoryMode) LoadingState.loadAndSwitchState(new StoryMenuState());
-                    else LoadingState.loadAndSwitchState(new FreeplayState());
-                }
+            }
+            if (goBack) {
+                FlxG.sound.play(Paths.sound('cancelMenu'));
+                if (PlayState.isStoryMode) LoadingState.loadAndSwitchState(new StoryMenuState());
+                else LoadingState.loadAndSwitchState(new FreeplayState());
             }
             #if debug
-            if (debugMode) {
-                inCharMenuDebug = !inCharMenuDebug;
-                if (charsToChoose() == (5 | 6 | 7)) {
-                    bgColorR.value = leftHalfBG.color.red;
-                    bgColorG.value = leftHalfBG.color.green;
-                    bgColorB.value = leftHalfBG.color.blue;
-                } else {
-                    switch (selectedColumn) {
-                        case 'enemy':
-                            if (charsToChoose() == 1) {
-                                bgColorR.value = leftThirdBG.color.red;
-                                bgColorG.value = leftThirdBG.color.green;
-                                bgColorB.value = leftThirdBG.color.blue;
-                            } else if (charsToChoose() == (3 | 4)) {
-                                bgColorR.value = leftHalfBG.color.red;
-                                bgColorG.value = leftHalfBG.color.green;
-                                bgColorB.value = leftHalfBG.color.blue;
-                            } else trace('This shit aint possible');
-                        case 'gf':
-                            if (charsToChoose() == 1) {
-                                bgColorR.value = middleThirdBG.color.red;
-                                bgColorG.value = middleThirdBG.color.green;
-                                bgColorB.value = middleThirdBG.color.blue;
-                            } else if (charsToChoose() == 2) {
-                                bgColorR.value = leftHalfBG.color.red;
-                                bgColorG.value = leftHalfBG.color.green;
-                                bgColorB.value = leftHalfBG.color.blue;
-                            } else if (charsToChoose() == 3) {
-                                bgColorR.value = rightHalfBG.color.red;
-                                bgColorG.value = rightHalfBG.color.green;
-                                bgColorB.value = rightHalfBG.color.blue;
-                            } else trace('This shit aint possible');
-                        case 'bf':
-                            if (charsToChoose() == 1) {
-                                bgColorR.value = rightThirdBG.color.red;
-                                bgColorG.value = rightThirdBG.color.green;
-                                bgColorB.value = rightThirdBG.color.blue;
-                            } else if (charsToChoose() == (2 | 4)) {
-                                bgColorR.value = rightHalfBG.color.red;
-                                bgColorG.value = rightHalfBG.color.green;
-                                bgColorB.value = rightHalfBG.color.blue;
-                            } else trace('This shit aint possible');
-                        default: 
-                            trace('bruh, how there no column');
-                    }
-                }
-            }
+            if (debugMode) {inCharMenuDebug = !inCharMenuDebug;}
             if (refreshButton) {refreshState(true);} // Use only to fix broken save data
             if (inCharMenuDebug) {
-                // I can't get it to hide all items sadly, so buttons and random black boxes from text fields stay - Torch
-                changeActive([bgColorR, bgColorG, bgColorB, saveButton, testColors], true);
-                changeAlpha([offsets, curChar, bgColorText, bgColorR, bgColorG, bgColorB, saveButton, saveButton.label, testColors, testColors.label], 1);
-                FlxG.mouse.visible = true;
-                disableUIKeys = true;
-
-                @:privateAccess
-                {
-                    if ((bgColorR.text_field is FlxInputText)) {
-                        var fit:FlxInputText = cast bgColorR.text_field;
-                        fit.backgroundColor = FlxColor.WHITE;
-                        fit.alpha = 1;
-                    } else {
-                        bgColorR.text_field.alpha = 1;
-                    }
-                    if ((bgColorG.text_field is FlxInputText)) {
-                        var fit:FlxInputText = cast bgColorG.text_field;
-                        fit.backgroundColor = FlxColor.WHITE;
-                        fit.alpha = 1;
-                    } else {
-                        bgColorG.text_field.alpha = 1;
-                    }
-                    if ((bgColorB.text_field is FlxInputText)) {
-                        var fit:FlxInputText = cast bgColorB.text_field;
-                        fit.backgroundColor = FlxColor.WHITE;
-                        fit.alpha = 1;
-                    } else {
-                        bgColorB.text_field.alpha = 1;
-                    }
-                }
-
-                backgroundColor = [Math.round(bgColorR.value), Math.round(bgColorG.value), Math.round(bgColorB.value)];
-
+                offsets.alpha = 1;
+                curChar.alpha = 1;
                 switch (selectedColumn) {
                     case 'enemy':
-                        tempOffsets = grabOffsets(enemyImageArray[selectedEnemy]);
+                        var tempOffsets:Array<Int> = grabOffsets(enemyImageArray[selectedEnemy]);
                         if(moveUp) {
                             if (speedUp) {
                                 testOffsets[1] -= 10;
@@ -1025,9 +794,10 @@ class TorchsCharMenuState extends MusicBeatState{
                                 enemyImageArray[selectedEnemy].x++;
                             }
                         }
+                        offsets.text = "Current Character's\nMenu Offsets:\nX: " + (tempOffsets[0] + testOffsets[0]) + "\nY: " + (tempOffsets[1] + testOffsets[1]);
                         curChar.text = enemyImageArray[selectedEnemy].curCharacter;
                     case 'gf':
-                        tempOffsets = grabOffsets(gfImageArray[selectedGF]);
+                        var tempOffsets:Array<Int> = grabOffsets(gfImageArray[selectedGF]);
                         if(moveUp) {
                             if (speedUp) {
                                 testOffsets[1] -= 10;
@@ -1064,9 +834,10 @@ class TorchsCharMenuState extends MusicBeatState{
                                 gfImageArray[selectedGF].x++;
                             }
                         }
+                        offsets.text = "Current Character's\nMenu Offsets:\nX: " + (tempOffsets[0] + testOffsets[0]) + "\nY: " + (tempOffsets[1] + testOffsets[1]);
                         curChar.text = gfImageArray[selectedGF].curCharacter;
                     case 'bf':
-                        tempOffsets = grabOffsets(bfImageArray[selectedBF]);
+                        var tempOffsets:Array<Int> = grabOffsets(bfImageArray[selectedBF]);
                         if(moveUp) {
                             if (speedUp) {
                                 testOffsets[1] -= 10;
@@ -1103,42 +874,10 @@ class TorchsCharMenuState extends MusicBeatState{
                                 bfImageArray[selectedBF].x++;
                             }
                         }
+                        offsets.text = "Current Character's\nMenu Offsets:\nX: " + (tempOffsets[0] + testOffsets[0]) + "\nY: " + (tempOffsets[1] + testOffsets[1]);
                         curChar.text = bfImageArray[selectedBF].curCharacter;
                 }
-                offsets.text = "Current Character's\nMenu Offsets:\nX: " + (tempOffsets[0] + testOffsets[0]) + "\nY: " + (tempOffsets[1] + testOffsets[1]);
-
-                charInfoSaveData.offsets = [tempOffsets[0] + testOffsets[0], tempOffsets[1] + testOffsets[1]];
-            } else {
-                changeActive([bgColorR, bgColorG, bgColorB, saveButton, testColors], false);
-                changeAlpha([offsets, curChar, bgColorText, bgColorR, bgColorG, bgColorB, saveButton, saveButton.label, testColors, testColors.label], 0);
-                FlxG.mouse.visible = false;
-                disableUIKeys = false;
-
-                @:privateAccess 
-                {
-                    if ((bgColorR.text_field is FlxInputText)) {
-                        var fit:FlxInputText = cast bgColorR.text_field;
-                        fit.backgroundColor = FlxColor.TRANSPARENT;
-                        fit.alpha = 0;
-                    } else {
-                        bgColorR.text_field.alpha = 0;
-                    }
-                    if ((bgColorG.text_field is FlxInputText)) {
-                        var fit:FlxInputText = cast bgColorG.text_field;
-                        fit.backgroundColor = FlxColor.TRANSPARENT;
-                        fit.alpha = 0;
-                    } else {
-                        bgColorG.text_field.alpha = 0;
-                    }
-                    if ((bgColorB.text_field is FlxInputText)) {
-                        var fit:FlxInputText = cast bgColorB.text_field;
-                        fit.backgroundColor = FlxColor.TRANSPARENT;
-                        fit.alpha = 0;
-                    } else {
-                        bgColorB.text_field.alpha = 0;
-                    }
-                }
-            }
+            } else {offsets.alpha = 0; curChar.alpha = 0;}
             #end
         }
 
@@ -1369,25 +1108,37 @@ class TorchsCharMenuState extends MusicBeatState{
 
     function checkIfCharAlreadyExists() {
         if (pixelSong) {
-            for (list in pixelCharacters) {
-                for (i in 0...list.length) {
-                    if ( i==0 ) continue;
-                    else {if (list[i] == list[0]) list.splice(i, 1);}
-                }
+            for (i in 0...pixelCharacters[0].length) {
+                if (i == 0) continue;
+                else if (pixelCharacters[0][i] == pixelCharacters[0][0]) {pixelCharacters[0].splice(i, 1);}
+            }
+            for (i in 0...pixelCharacters[1].length) {
+                if (i == 0) continue;
+                else if (pixelCharacters[1][i] == pixelCharacters[1][0]) {pixelCharacters[1].splice(i, 1);}
+            }
+            for (i in 0...pixelCharacters[2].length) {
+                if (i == 0) continue;
+                else if (pixelCharacters[2][i] == pixelCharacters[2][0]) {pixelCharacters[2].splice(i, 1);}
             }
         } else {
-            for (list in standardCharacters) {
-                for (i in 0...list.length) {
-                    if (i == 0) {continue;}
-                    else {if (list[i] == list[0]) list.splice(i, 1);}
-                }
+            for (i in 0...standardCharacters[0].length) {
+                if (i == 0) continue;
+                else if (standardCharacters[0][i] == standardCharacters[0][0]) {standardCharacters[0].splice(i, 1);}
+            }
+            for (i in 0...standardCharacters[1].length) {
+                if (i == 0) continue;
+                else if (standardCharacters[1][i] == standardCharacters[1][0]) {standardCharacters[1].splice(i, 1);}
+            }
+            for (i in 0...standardCharacters[2].length) {
+                if (i == 0) continue;
+                else if (standardCharacters[2][i] == standardCharacters[2][0]) {standardCharacters[2].splice(i, 1);}
             }
         }
     }
 
     function checkBaseSongsForGf() {
         var gfArray:Array<String> = pixelSong ? pixelCharacters[1] : standardCharacters[1];
-        if (PlayState.SONG.gfVersion != null && PlayState.SONG.gfVersion != '') gfArray[0] = PlayState.SONG.gfVersion; 
+        if (PlayState.SONG.gfVersion != null && PlayState.SONG.gfVersion != '') {gfArray[0] = PlayState.SONG.gfVersion;} 
         else {
             switch (PlayState.SONG.song.toLowerCase()) {
                 case 'high' | 'milf' | 'satin-panties':
@@ -1423,21 +1174,31 @@ class TorchsCharMenuState extends MusicBeatState{
 
         clearAllSaveData();
 
-        for (array in tempSaveArray) if (array[0].toString() == failsafeString) tempSaveArray.remove(array); 
+        for (array in tempSaveArray) {
+            if (array[0].toString() == failsafeString) {tempSaveArray.remove(array);} 
+        }
 		var tempArray = ArrayTools.grabFirstVal(tempSaveArray);
 
         for (char in characterList) {
-            var truray:Array<String> = [char, "true"];
-            var falray:Array<String> = [char, "false"];
-            if (tempArray.indexOf(char) != -1) {if (tempSaveArray.contains(truray)) {continue;}
+            // I have no idea if either of these arrays are working lol
+            var truray:Array<String> = [char, "true"]; // truray = True Array
+            var falray:Array<String> = [char, "false"]; // falray = False Array
+            if (tempArray.indexOf(char) != -1) {
+                if (tempSaveArray.contains(truray)) {
+                    continue;
+                }
             } else if (unlockedChars != null && unlockedChars.contains(char) && !(tempSaveArray.contains(truray))) {
                 tempArray.insert(characterList.indexOf(char), char);
                 tempSaveArray.insert(characterList.indexOf(char), [char,"true"]);
+                //trace("Unlocked Chars contains " + char);
             } else if (unlockedChars != null && !unlockedChars.contains(char) && !(tempSaveArray.contains(falray))) {
                 tempArray.insert(characterList.indexOf(char), char);
                 tempSaveArray.insert(characterList.indexOf(char), [char,"false"]);
+                //trace("Unlocked Chars does not contain " + char);
             }
         }
+        //trace("Save Array: " + tempSaveArray);
+        //trace("Unlocked Chars: " + unlockedChars);
 
         characterLocks = tempSaveArray;
         charIndex = tempArray;
@@ -1470,7 +1231,6 @@ class TorchsCharMenuState extends MusicBeatState{
 		return tempList;
 	}
 
-    // This will be changed once I get json files made
     public function charMenuData() { // HOLY SHIT I GOT ACTUAL MOD SUPPORT
         var tempColorArray = Assets.getText(Paths.txt('charMenu/characterColors', daFolder)).trim().split("\n");
         var tempNameArray = Assets.getText(Paths.txt('charMenu/characterNames', daFolder)).trim().split("\n");
@@ -1520,10 +1280,12 @@ class TorchsCharMenuState extends MusicBeatState{
 
     function resetCharSelectVars() {
         // Only uncoment this to force the save variables to be null and potentially fix a save data issue, comment again after use
-        //clearAllSaveData();
+        clearAllSaveData();
         if (FlxG.save.data.maxCharacters == null) FlxG.save.data.maxCharacters = 0;
         if (FlxG.save.data.unlockedCharacters == null) FlxG.save.data.unlockedCharacters = getUnlockedChars();
         if (FlxG.save.data.charactersAvailable == null || characterList == null || characterList == [] || characterLocks == [] || characterLocks == null || characterLocks != FlxG.save.data.charactersAvailable || FlxG.save.data.maxCharacters != characterList.length  || FlxG.save.data.unlockedCharacters != defaultUnlocked) 
             forceCharUnlockSaveUpdate();
+        //trace('This Be The Character Lock List: ' + characterLocks);
+        //trace('This Be The Character Index List: ' + charIndex);
     }
 }
