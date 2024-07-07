@@ -46,7 +46,7 @@ class GalleryState extends MusicBeatState
 
         #if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Gallery", null);
+		DiscordClient.changePresence("Looking at the Gallery", null);
 		#end
 
         var jsonData:String = File.getContent("assets/shared/images/gallery/gallery.json");

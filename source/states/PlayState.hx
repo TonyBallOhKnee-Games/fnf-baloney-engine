@@ -327,7 +327,7 @@ class PlayState extends MusicBeatState
 			detailsText = "Freeplay Mode";
 
 		// String for when the game is paused
-		detailsPausedText = "Stunned - " + detailsText;
+		detailsPausedText = "Paused - " + detailsText;
 		#end
 
 		GameOverSubstate.resetVariables();

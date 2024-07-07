@@ -22,8 +22,9 @@ class MainMenuState extends MusicBeatState
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		#if !switch 'donate', #end
-		'options',
-		'gallery'
+		'gallery',
+		'help',
+		'options'
 	];
 
 	var magenta:FlxSprite;
@@ -45,7 +46,7 @@ class MainMenuState extends MusicBeatState
 
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("In the Main Menu", null);
 		#end
 
 		transIn = FlxTransitionableState.defaultTransIn;
@@ -240,6 +241,8 @@ class MainMenuState extends MusicBeatState
 								}
 							case 'gallery':
 								MusicBeatState.switchState(new GalleryState());
+							case 'help':
+								MusicBeatState.switchState(new HelpState());
 						}
 					});
 

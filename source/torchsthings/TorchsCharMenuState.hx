@@ -52,6 +52,7 @@ class TorchsCharMenuState extends MusicBeatState{
         [['milf', 2], ['guns', 1]]
         This makes 'milf' use the Enemy + BF menu, and 'guns' use the BF + GF menu.
     */
+
     public static var specificCharMenus:Array<Array<Dynamic>> = [['tutorial', 1], ['stress', 2]];
 
     // Disables these songs from being able to use the character menu
@@ -104,6 +105,8 @@ class TorchsCharMenuState extends MusicBeatState{
         ['bf-iandee', 'week1_nomiss', "Unlock this character\nby beating Week 1\nwith no misses."]
     ];
     #end
+
+    
 
     // Default Unlocked Characters
     var defaultUnlocked:Array<String> = [
@@ -264,6 +267,11 @@ class TorchsCharMenuState extends MusicBeatState{
         FlxG.save.data.charactersAvailable = characterLocks;
         FlxG.save.flush();
         #end
+
+        #if DISCORD_ALLOWED
+        // Updating Discord Rich Presence
+        DiscordClient.changePresence("In the Character Picker", null);
+        #end
         
         if (charactersToChooseFrom.length == 3) {
             leftThirdBG = initBGImage(leftThirdBG, "charMenu/leftThirdBG");
@@ -385,7 +393,7 @@ class TorchsCharMenuState extends MusicBeatState{
         #end
 
         // Character select text at the top of the screen
-        var selectionHeader:Alphabet = new Alphabet(0, 50, 'Character Select', true);
+        var selectionHeader:Alphabet = new Alphabet(0, 50, 'Pick Your Rapper!', true);
         selectionHeader.screenCenter(X);
         add(selectionHeader);
 
