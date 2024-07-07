@@ -8,11 +8,6 @@ import flixel.util.FlxColor;
 import openfl.utils.Assets;
 import objects.HealthIcon;
 
-// NOT YET IMPLEMENTED
-// NOT YET IMPLEMENTED
-// NOT YET IMPLEMENTED
-// NOT YET IMPLEMENTED
-// NOT YET IMPLEMENTED
 // This is just added for preperation of use in the Character Menu - Torch
 class CharacterInfoCard extends FlxSprite {
     private var character = "";
@@ -38,4 +33,11 @@ class CharacterInfoCard extends FlxSprite {
     override function update(elapsed:Float) {
         super.update(elapsed);
     }
+}
+
+typedef CharInfoData = {
+    var name:String;
+    var description:String;
+    var offsets:Array<Float>;
+    var color:Array<Int>;
 }
