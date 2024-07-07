@@ -23,7 +23,6 @@ class MainMenuState extends MusicBeatState
 		'credits',
 		#if !switch 'donate', #end
 		'gallery',
-		'help',
 		'options'
 	];
 
@@ -241,8 +240,7 @@ class MainMenuState extends MusicBeatState
 								}
 							case 'gallery':
 								MusicBeatState.switchState(new GalleryState());
-							case 'help':
-								MusicBeatState.switchState(new HelpState());
+							
 						}
 					});
 
