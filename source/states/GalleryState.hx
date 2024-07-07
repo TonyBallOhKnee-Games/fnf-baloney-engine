@@ -44,6 +44,11 @@ class GalleryState extends MusicBeatState
     {   
         // FlxG.sound.playMusic(Paths.music("galleryMusic"));
 
+        #if DISCORD_ALLOWED
+		// Updating Discord Rich Presence
+		DiscordClient.changePresence("In the Gallery", null);
+		#end
+
         var jsonData:String = File.getContent("assets/shared/images/gallery/gallery.json");
         var imageData:Array<ImageData> = haxe.Json.parse(jsonData);
 

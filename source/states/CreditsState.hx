@@ -22,7 +22,7 @@ class CreditsState extends MusicBeatState
 	{
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Credits", null);
+		DiscordClient.changePresence("In the Credits", null);
 		#end
 
 		persistentUpdate = true;

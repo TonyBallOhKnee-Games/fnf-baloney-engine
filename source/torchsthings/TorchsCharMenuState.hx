@@ -78,21 +78,7 @@ class TorchsCharMenuState extends MusicBeatState{
     // Do not remove these variables, used to grab ALL characters in the build
     var characterList:Array<String> = [];
     var unlistedCharacters:Array<String> = [ // Put specific mod characters here (that are not in the "characterList.txt" file)
-        'Robin', 
-        "darnell",
-        "nene", 
-        "bf-z3mp", 
-        "Compota-Hyper", 
-        "noah", 
-        "gf-z3mp",
-        "gf-soleil",
-        "gf-carZ3mp",
-        "pico-playerZ3mp",
-        "picoZ3mp",
-        "bidu-gold",
-        "jeys-bf",
-        "bf-iandee",
-        'torch'
+        'sakuromaOld'
     ]; // PLEASE KEEP TRACK IF YOU ADD NEW CHARACTERS, IT GETS ANNOYING WHEN SOMETHING CRASHES HERE BECAUSE A CHARACTER WASN'T ADDED TO THIS LIST HERE
 
     // This blocks specific characters depending on the song
