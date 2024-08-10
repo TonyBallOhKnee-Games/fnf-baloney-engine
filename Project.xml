@@ -92,7 +92,7 @@
 
 	<!-- _______________________________ Libraries ______________________________ -->
 	
-	<haxelib name="torchsfunctions"/>
+	
 	<haxelib name="flixel" />
 	<haxelib name="flixel-ui" />
 	<haxelib name="flixel-addons" />
@@ -113,7 +113,7 @@
 	<haxelib name="hxcpp-debug-server" if="debug"/>
 	<haxedef name="HXC_LIBVLC_LOGGING" if="VIDEOS_ALLOWED debug" />
 <!--THANK YOU SO MUCH TORCHTHEDRAGON!!!-->
-	
+	<haxelib name="torchsfunctions"/>
 	
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
